@@ -1,0 +1,25 @@
+<h1>My favourite pitcures</h1>
+  <ul>
+    <% for picture in @pictures %>
+      <li><%= image_tag(picture.picture_url) if picture.picture?%></li>
+      <li><%= picture.title %> (<%= picture.date %>)</li>
+        <% end %>
+<h1>My Rails Girls Diary</h1>
+<p><%= link_to("show to all entries", entries_path)%></p>
+  <div>
+    <% for entry in @entries %>
+      <h2><%= entry.title %></h2>
+      <p><%= entry.date %> </p>
+      <p><%= entry.contents%></p>
+    <% end %>
+  </div>
+<div>
+    <h1>My favourite websites</h1>
+     <ul>
+
+<% for website in @websites %>
+      <li><a href="<%= website.url %>"><%= website.title %></a></li>
+<% end %>
+    </ul>
+  </div>
+  <img src="http://railsgirls.com/images/rg-warsaw.png" />
